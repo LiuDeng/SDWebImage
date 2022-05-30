@@ -322,3 +322,5 @@ FOUNDATION_EXPORT SDWebImageContextOption _Nonnull const SDWebImageContextCacheK
  A id<SDWebImageCacheSerializer> instance to convert the decoded image, the source downloaded data, to the actual data. It's used for manager to store image to the disk cache. If you provide one, it will ignore the `cacheSerializer` in manager and use provided one instead. (id<SDWebImageCacheSerializer>)
  */
 FOUNDATION_EXPORT SDWebImageContextOption _Nonnull const SDWebImageContextCacheSerializer;
+
+FOUNDATION_EXPORT SDWebImageContextOption _Nonnull const SDWebImageContextAddtionalHTTPHeaders;

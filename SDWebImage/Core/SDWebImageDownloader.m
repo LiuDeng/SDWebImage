@@ -274,7 +274,12 @@ static void * SDWebImageDownloaderContext = &SDWebImageDownloaderContext;
     mutableRequest.HTTPShouldHandleCookies = SD_OPTIONS_CONTAINS(options, SDWebImageDownloaderHandleCookies);
     mutableRequest.HTTPShouldUsePipelining = YES;
     SD_LOCK(_HTTPHeadersLock);
-    mutableRequest.allHTTPHeaderFields = self.HTTPHeaders;
+    if ([context valueForKey:SDWebImageContextAddtionalHTTPHeaders]) {
+        NSMutableDictionary<NSString *, NSString *>* headers = [context valueForKey:SDWebImageContextAddtionalHTTPHeaders];
+        mutableRequest.allHTTPHeaderFields = headers;
+    }else{
+        mutableRequest.allHTTPHeaderFields = self.HTTPHeaders;
+    }
     SD_UNLOCK(_HTTPHeadersLock);
     
     // Context Option
