@@ -7,6 +7,7 @@
  */
 
 #import "SDWebImageIndicator.h"
+#import <CoreImage/CoreImage.h>
 
 #if SD_UIKIT || SD_MAC
 
